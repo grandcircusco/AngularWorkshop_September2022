@@ -1,0 +1,13 @@
+<h1>Welcome to {{ title }}</h1>
+
+<p>There are {{ names.length }} people present.</p>
+
+<div *ngFor="let n of names; index as i">
+  <div>{{ i }} {{ n }}</div>
+</div>
+
+<p *ngIf="isHungry">You are hungry</p>
+
+<p>{{ currentDay | date }}</p>
+
+<p>{{ p.name }}</p>
