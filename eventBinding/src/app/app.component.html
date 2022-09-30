@@ -6,7 +6,16 @@
   <button type="submit">Add to Order</button>
 </form>
 
+
 <div *ngFor="let n of names">
   <p>{{ n }}</p>
   <button (click)="changeTitle(n)">Click me!</button>
 </div>
+
+<p>{{ displayItem.name }}</p>
+
+<form (ngSubmit)="addName()">
+  <label for="name">Enter a name!</label>
+  <input name="name" id="name" [(ngModel)]="displayItem.name" />
+  <button type="submit">Add to Order</button>
+</form>
