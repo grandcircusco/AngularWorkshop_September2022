@@ -1,0 +1,2 @@
+<app-contact-card *ngFor="let c of contacts" [contact]="c" (remove)="removeContact($event)" ></app-contact-card>
+<app-contact-form (addContact)="addContact($event)"></app-contact-form>

@@ -1,0 +1,13 @@
+<form (ngSubmit)="AddContact()">
+    <select name="image" id="image" [(ngModel)]="newContact.image">
+        <option value="https://i.pravatar.cc/150?img=55">Instrument Playing Man</option>
+        <option value="https://i.pravatar.cc/150?img=3">Steaming Man</option>
+        <option value="https://i.pravatar.cc/150?img=46">Silly Young Girl</option>
+        <option value="https://i.pravatar.cc/150?img=4">Little Boy</option>
+        <option value="https://i.pravatar.cc/150?img=30">Laughing Woman</option>
+    </select>
+
+    <input type="text" name="name" [(ngModel)]="newContact.name" />
+    <input type="email" name="email" [(ngModel)]="newContact.email" />
+    <button>Add Contact</button>
+</form>

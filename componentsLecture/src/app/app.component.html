@@ -1,0 +1,8 @@
+<app-greeter *ngFor="let n of names" [name]="n" (remove)="removeFromArray($event)"></app-greeter>
+
+<form (ngSubmit)="addNameToArray()">
+  <label for="name">Enter a new name:</label>
+  <input type="text" id="name" name="name" [(ngModel)]="newName" />
+
+  <button>Add Name</button>
+</form>
