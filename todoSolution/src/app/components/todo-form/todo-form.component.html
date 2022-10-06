@@ -1,0 +1,9 @@
+<form (ngSubmit)="handleSubmit()">
+  <p>
+    <label for="taskInput">Enter a new task:</label>
+    <input id="taskInput" placeholder="Add your to-do" name="taskInput" [(ngModel)]="formTask" />
+  </p>
+  <p>
+    <button type="submit">Add</button>
+  </p>
+</form>

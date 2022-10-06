@@ -1,0 +1,21 @@
+li {
+  position: relative;
+}
+
+.completeButton {
+  color: #ff69b4;
+  border: 1px solid #ff69b4;
+  background-color: white;
+  margin-right: .5em;
+  border-radius: 4px;
+}
+
+.taskText {
+}
+
+.deleteButton {
+  border: none;
+  background: transparent;
+  position: absolute;
+  right: 0;
+}
