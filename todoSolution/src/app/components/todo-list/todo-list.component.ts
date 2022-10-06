@@ -19,4 +19,16 @@ export class TodoListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  markComplete(index: number): void {
+    this.todos[index].completed = true;
+  }
+
+  remove(index: number): void {
+    this.todos.splice(index, 1);
+  }
+
+  addTodo(todo: Todo): void {
+    this.todos.push(todo);
+  }
+
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Todo } from 'src/app/interfaces/todo';
 
 @Component({
   selector: 'app-todo-form',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-form.component.css']
 })
 export class TodoFormComponent implements OnInit {
+  @Output() save = new EventEmitter<Todo>();
 
   formTask = "";
 
@@ -15,7 +17,11 @@ export class TodoFormComponent implements OnInit {
   }
 
   handleSubmit(): void {
-    console.log(this.formTask);
+    const newTodo: Todo = {
+      task: this.formTask,
+      completed: false
+    };
+    this.save.emit(newTodo);
     // clear form
     this.formTask = "";
   }

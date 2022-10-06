@@ -19,3 +19,8 @@ li {
   position: absolute;
   right: 0;
 }
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}

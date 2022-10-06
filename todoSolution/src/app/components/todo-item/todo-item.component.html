@@ -1,5 +1,5 @@
-<li>
-  <button class="completeButton">Complete</button>
-  <span class="taskText">fold clothes</span>
-  <button class="deleteButton">X</button>
+<li [ngClass]="{completed: todo.completed}">
+  <button class="completeButton" *ngIf="!todo.completed" (click)="handleComplete()">Complete</button>
+  <span class="taskText">{{todo.task}}</span>
+  <button class="deleteButton" (click)="handleRemove()">X</button>
 </li>

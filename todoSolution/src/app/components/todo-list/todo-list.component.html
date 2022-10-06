@@ -1,10 +1,11 @@
 <div class="wrapper">
   <h1>To-Do List</h1>
   <p>A place to store your todos</p>
-  <ol>
-    <app-todo-item></app-todo-item>
-    <app-todo-item></app-todo-item>
-    <app-todo-item></app-todo-item>
+  <ol>   
+    <app-todo-item *ngFor="let todo of todos; let i = index"
+                   [todo]="todo"
+                   (complete)="markComplete(i)"
+                   (remove)="remove(i)" ></app-todo-item>
   </ol>
-  <app-todo-form></app-todo-form>
+  <app-todo-form (save)="addTodo($event)"></app-todo-form>
 </div>
