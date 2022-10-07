@@ -1,1 +1,5 @@
-<p>quote-list works!</p>
+<h1>Quote List</h1>
+<ol>
+  <app-quote-item *ngFor="let quote of quotes" [quote]="quote">
+  </app-quote-item>
+</ol>

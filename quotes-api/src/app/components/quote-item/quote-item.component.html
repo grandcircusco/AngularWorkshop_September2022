@@ -1,0 +1,8 @@
+<li *ngIf="quote">
+  <img src="https://dwolverton.github.io/juneteenth/public{{quote.photo}}" alt="Photo of {{quote.source}}" />
+  <p *ngFor="let line of quote.text">{{line}}</p>
+  <p>- by {{quote.source}}
+    <span *ngIf="quote.date.exact"> on {{quote.date.exact | date}}</span>
+    <span *ngIf="!quote.date.exact && quote.date.year"> in {{quote.date.year}}</span>
+  </p>
+</li>
