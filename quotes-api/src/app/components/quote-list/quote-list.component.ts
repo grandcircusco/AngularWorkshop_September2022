@@ -13,7 +13,10 @@ export class QuoteListComponent implements OnInit {
 
   ngOnInit(): void {
     // 2. use service where needed
-    this.quoteApiService.fetchQuotes();
+    this.quoteApiService.fetchQuotes().subscribe((quotes) => {
+      console.log(quotes);
+    });
+    
   }
 
 }
