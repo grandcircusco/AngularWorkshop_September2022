@@ -1,0 +1,4 @@
+<div *ngFor="let p of staff">
+    <!-- <a routerLink="/people/{{ p.id }}">{{ p.name }}</a> -->
+    <a [routerLink]="['/people', p.id]" >{{ p.name }}</a>
+</div>

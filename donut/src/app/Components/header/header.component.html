@@ -1,0 +1,4 @@
+<nav>
+    <a [routerLink]="['/Home']">Home</a>
+    <a [routerLink]="['/Cart']">Cart<span *ngIf="getCartCount() >= 1">{{getCartCount()}} items</span></a>
+</nav>

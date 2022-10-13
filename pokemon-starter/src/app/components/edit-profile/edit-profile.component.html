@@ -1,0 +1,45 @@
+<form (ngSubmit)="submitForm()" (input)="showSavedMessage = false" #form="ngForm">
+  <h2>Edit Profile</h2>
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="values.name" #name="ngModel" required minlength="4">
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger mt-2" >
+      <div *ngIf="name.errors?.['required']">Name is required.</div>
+      <div *ngIf="name.errors?.['minlength']">Name must be at least 4 characters.</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <!-- TODO: add validation -->
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="values.email" required email>
+    <!-- Email is not valid. -->
+    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger mt-2">
+      <div *ngIf="email.errors?.['required']">Email is required</div>
+      <div *ngIf="email.errors?.['email']">Email is not valid</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <!-- TODO: add 2-way binding and validation -->
+    <label for="birthYear" class="form-label">Birth Year</label>
+    <input type="number" class="form-control" id="birthYear" name="birthYear" [(ngModel)]="values.birthYear" #birthYear="ngModel" required min="1900" max="2022" />
+    <div *ngIf="birthYear.invalid && (birthYear.dirty || birthYear.touched)" class="alert alert-danger mt-2">
+      <div *ngIf="birthYear.errors?.['required']">Birth year is required</div>
+      <div *ngIf="birthYear.errors?.['min']">Birth year must not be before 1900</div>
+      <div *ngIf="birthYear.errors?.['max']">Birth year must not be in the future</div>
+    </div>
+
+    <input type="number" class="form-control" id="birthYear" name="birthYear" [(ngModel)]="values.birthYear" #birthYear="ngModel" required min="1900" max="2022">
+    <div *ngIf="birthYear.invalid && (birthYear.dirty || birthYear.touched)" class="alert alert-danger mt-2" >
+      <div *ngIf="birthYear.errors?.['required']">Birth year is required.</div>
+      <div *ngIf="birthYear.errors?.['min']">Birth year must not be before 1900.</div>
+      <div *ngIf="birthYear.errors?.['max']">Birth year must not be in the future.</div>
+    </div>
+    <!-- Birth year is required. -->
+    <!-- Birth year must not be before 1900. -->
+    <!-- Birth year must not be in the future. -->
+  </div>
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
+    <div *ngIf="showSavedMessage" class="alert alert-success mt-2">Profile Saved</div>
+  </div>
+</form>

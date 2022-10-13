@@ -1,0 +1,15 @@
+<h1>Weather</h1>
+<div *ngFor="let w of weatherData.properties.periods">
+    <h2>{{ w.name }}</h2>
+    <p>Temperature: {{ w.temperature}}</p>
+    <p>{{ w.detailedForecast }}</p>
+    <img src="{{ w.icon }}" />
+</div>
+
+
+<h1>Open Weather</h1>
+<input type="text" name="city" [(ngModel)]="city" />
+<button (click)="getOpenWeather()">Search City</button>
+<h2>{{ openWeatherData.name }}</h2>
+<p>{{ openWeatherData.main.temp}}</p>
+<p>{{ openWeatherData.weather[0].description }}</p>

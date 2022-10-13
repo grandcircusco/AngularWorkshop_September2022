@@ -1,0 +1,6 @@
+<h2>All Pokemon</h2>
+<ol>
+  <li *ngFor="let pokemon of results">
+    <a [routerLink]="['/details', pokemon.id]">{{ pokemon.name }}</a>
+  </li>
+</ol>

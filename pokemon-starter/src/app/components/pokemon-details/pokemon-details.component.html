@@ -1,0 +1,18 @@
+<div *ngIf="pokemon">
+  <h2>{{ pokemon.name }}</h2>
+  <p>
+    <button class="btn btn-primary" (click)="addToDeck()">Add to Deck</button>
+  </p>
+  <img src="{{pokemon.sprites.dreamworld}}" alt="">
+  <p>
+    Species: {{pokemon.species}}
+  </p>
+  <p>
+    Types: <span *ngFor="let type of pokemon.types; last as last">{{type}}{{!last ? ', ' : ''}}</span>
+  </p>
+</div>
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="!loading && !pokemon">
+  <p>Pokemon not found</p>
+  <p>Return to the <a [routerLink]="['/']">Homepage</a></p>
+</div>

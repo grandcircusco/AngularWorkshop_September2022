@@ -1,0 +1,12 @@
+<h1>{{ DisplayDonut.name }}</h1>
+<img height="100px" src="{{ DisplayDonut.photo }}" />
+<p>Calories: {{ DisplayDonut.calories }}</p>
+<div>
+    Tags:
+    <span *ngFor="let e of DisplayDonut.extras">{{ e }}, </span>
+</div>
+
+<p>Ref: {{ DisplayDonut.ref}}</p>
+<p>Image Ref: {{ DisplayDonut.photo_attribution }}</p>
+
+<button (click)="addToCart()">Add to cart</button>

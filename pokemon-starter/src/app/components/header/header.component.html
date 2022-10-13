@@ -1,0 +1,36 @@
+<header class="d-flex justify-content-between mb-3">
+  <div>
+    <h1>Pokemon App</h1>
+    <nav>
+      <ul class="nav">
+        <!-- the "active" class is added when the current URL matches a link -->
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink=""
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            >All Pokemon</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="deck"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >My Deck</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div>
+    <img *ngIf="pet" [src]="pet" />
+    <span>
+      Welcome {{profile.name}}
+      <a class="btn btn-secondary btn-sm" routerLink="/profile">Edit Profile</a>
+    </span>
+  </div>
+</header>

@@ -1,0 +1,9 @@
+<ul>
+    <li *ngFor="let d of getCartDistinct()">{{ d.name}}
+         <span *ngIf="getQuantity(d) > 1">x {{ getQuantity(d)}}</span>
+         <button (click)="removeFromCart(d)">Remove</button>
+        </li>
+</ul>
+
+<p>Calories: {{displayCartCalories()}}</p>
+<p>Total: {{displayCartPrice() | currency}}</p>
